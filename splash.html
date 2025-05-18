@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Autor | Conservação da Biodiversidade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.split-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.author-section {
+    width: 40%;
+    background-color: #2e7d32;
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.author-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1586967440823-a9f85e61f6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.author-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.author-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.author-section h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.author-bio {
+    margin-bottom: 30px;
+}
+
+.author-bio p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.author-credentials {
+    margin-bottom: 30px;
+}
+
+.credential {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.credential-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.credential-text {
+    font-size: 1rem;
+}
+
+.author-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.contact-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+
+.project-section {
+    width: 60%;
+    background-color: #f9f9f9;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.project-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+    font-size: 2.2rem;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.project-description {
+    margin-bottom: 30px;
+}
+
+.project-description p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.topic-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.topic-card {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.topic-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.topic-card h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.topic-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.project-message {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: rgba(46, 125, 50, 0.08);
+    border-radius: 8px;
+    border-left: 4px solid #2e7d32;
+}
+
+.project-message p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.project-message p:last-child {
+    margin-bottom: 0;
+}
+
+.btn-explore {
+    display: inline-block;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 40px;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    text-align: center;
+    width: 100%;
+}
+
+.btn-explore:hover {
+    background-color: #1b5e20;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+}
+
+
+@media (max-width: 1024px) {
+    .split-container {
+        flex-direction: column;
+    }
+    
+    .author-section, .project-section {
+        width: 100%;
+        padding: 60px 30px;
+    }
+    
+    .author-section {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .author-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .author-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .project-title {
+        font-size: 1.8rem;
+    }
+    
+    .author-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .topic-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .author-section, .project-section {
+        padding: 40px 20px;
+    }
+    
+    .author-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .author-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .project-title {
+        font-size: 1.6rem;
+    }
+    
+    .author-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .btn-explore {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+}
+</style>
+<body>
+    <div class="split-container">
+        
+        <div class="author-section">
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="WhatsApp Image 2025-05-17 at 18.48.25.jpeg" alt="Foto do Autor">
+                </div>
+                <h1>Alexandre Durval</h1>
+                <h2>Estudante rumo a Profissionalização</h2>
+                
+                <div class="author-bio">
+                    <p>Olá! Sou Alexandre Durval, Aluno do terceiro ano do ensino medio no Colégio Estadual Padre Claudio Morelli.</p>
+                    
+                    <p>Serei aquele que irá desenvolver esta página do Agrinho a respeito do tema: Conservação da Biodiversidade em Áreas Rurais e Urbanas, instruído pelo meu professor Rafael Buiu.</p>
+                    
+                    <p>Estou na reta final dos meus estudos no ensino médio, a um passo de ingressar na universidade para aprimorar minhas especializações. Caso deseje conhecer meus trabalhos futuros, clique nos links de contato e entre em contato comigo — terei o prazer em ajudar a resolver o seu problema.</p>
+                </div>
+                
+                <div class="author-credentials">
+                    <div class="credential">
+                        <span class="credential-icon">🎓</span>
+                        <span class="credential-text">Busca a formação e atuar na área da computação </span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-icon">📚</span>
+                        <span class="credential-text">Amante do Aprendizado</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-icon">🏆</span>
+                        <span class="credential-text">Esta contente  em competir no evento do Agrinho</span>
+                    </div>
+                </div>
+                
+             
+             <div class="author-contact">
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">📧</span>
+                        <span>alexandredurvaldossanto30s@gmail.com</span>
+                    </a> 
+       
+       
+                 <a href="https://www.linkedin.com/in/alexandre-durval-047396366?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMLgNfC2SSvKxVhtljnyVVA%3D%3D" target="_blank" class="contact-link">
+    <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+    <span>linkedin.com/in/alexandre-durval</span>
+</a>
+
+
+
+                    </a>
+                   <a href="https://instagram.com/santtosxr7" target="_blank" class="contact-link">
+    <span class="contact-icon"><i class="fab fa-instagram"></i></span>
+    <span>instagram.com/santtosxr7</span>
+
+</a>
+ 
+       
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+      
+        <div class="project-section">
+            <div class="project-content">
+                <div class="logo">BioDiversidade Brasil</div>
+                
+                <h2 class="project-title">Conservação da Biodiversidade em Áreas Rurais e Urbanas</h2>
+                
+                <div class="project-description">
+                    <p>Este projeto foi desenvolvido com o objetivo de compartilhar conhecimentos, pesquisas e estratégias sobre a conservação da biodiversidade tanto em ambientes rurais quanto urbanos.</p>
+                    
+                    <p>A perda de biodiversidade é um dos maiores desafios ambientais da atualidade, com impactos profundos nos ecossistemas e na qualidade de vida humana. Através deste site, você terá acesso a informações baseadas em evidências científicas sobre:</p>
+                </div>
+                
+                <div class="topic-cards">
+                    <div class="topic-card">
+                        <div class="topic-icon">🌳</div>
+                        <h3>Conservação Rural</h3>
+                        <p>Estratégias para preservação da biodiversidade em áreas agrícolas, florestas e outros ecossistemas rurais.</p>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-icon">🏙️</div>
+                        <h3>Biodiversidade Urbana</h3>
+                        <p>Soluções para promover e preservar a biodiversidade em ambientes urbanos, criando cidades mais sustentáveis.</p>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <div class="topic-icon">🔬</div>
+                        <h3>Pesquisas Científicas</h3>
+                        <p>Estudos recentes e dados sobre conservação da biodiversidade em diferentes contextos.</p>
+                    </div>
+                </div>
+                
+                <div class="project-message">
+                    <p>Este site é resultado de anos de pesquisa e experiência prática, reunindo conhecimentos acadêmicos e casos reais de sucesso na conservação da biodiversidade.</p>
+                    
+                    <p>Convido você a explorar este conteúdo e descobrir como podemos trabalhar juntos para proteger nossa maior riqueza natural.</p>
+                </div>
+                
+                <a href ="index.html" class= "btn-explore" style="cursor: pointer;">Explorar o Conteúdo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
